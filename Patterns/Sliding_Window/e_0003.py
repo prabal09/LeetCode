@@ -15,7 +15,18 @@ class Solution:
         return max_length
 
 ## O(n), O(min(m,n)) or O(1) assuming only a-z (26 letters)
-
+'''
+seen, L, best on "abcabcbb":
+R=0 a  char_map{a-0}       L=0  best=1
+R=1 b  char_map{a-0,b-1}     L=0  best=2
+R=2 c  char_map{a-0,b-1,c-2}   L=0  best=3
+R=3 a  'a' in char_map → drop s[0]=a, L=1 → char_map{b-1,c-2}; add a → {b,c,a}  best=3
+R=4 b  'b' in char_map → drop s[1]=b, L=2 → {c-2,a-3}; add b → {c,a,b}      best=3
+R=5 c  'c' in char_map → drop s[2]=c, L=3 → {a-3,b-3}; add c → {a,b,c}      best=3
+R=6 b  drop a(L=4), drop b(L=5) → {c}; add b → {c,b}               best=3
+R=7 b  drop c(L=6), drop b(L=7) → {}; add b → {b}                  best=3
+                                                          answer → 3
+'''
 
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
