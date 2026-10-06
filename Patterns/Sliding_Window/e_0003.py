@@ -14,7 +14,10 @@ class Solution:
 
         return max_length
 
-## O(n), O(min(m,n)) or O(1) assuming only a-z (26 letters)
+## Complexity:
+# Time: O(n)
+# Space: O(min(n, char_map))
+
 '''
 seen, L, best on "abcabcbb":
 R=0 a  char_map{a-0}       L=0  best=1
