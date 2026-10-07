@@ -23,3 +23,9 @@ class Solution:
             max_length = max(max_length, right - left + 1)
 
         return max_length
+
+'''
+Complexity
+Time: O(n)
+Space: O(1) — assuming a fixed alphabet (e.g. uppercase English letters)
+'''

@@ -21,13 +21,16 @@ class Solution:
 
         # Slide the window across s2
         for i in range(len1, len2):
-            # Add the new character entering the window from the right
-            s2_counts[ord(s2[i]) - ord('a')] += 1
-            # Remove the old character leaving the window from the left
-            s2_counts[ord(s2[i - len1]) - ord('a')] -= 1
+            s2_counts[ord(s2[i]) - ord('a')] += 1               # Add the new character entering the window from the right starting with position len1
+            s2_counts[ord(s2[i - len1]) - ord('a')] -= 1        # Remove the old character leaving the window from the left before len1
 
-            # Check if the current window matches s1's frequency profile
-            if s1_counts == s2_counts:
+            if s1_counts == s2_counts:                          # Check if the current window matches s1's frequency profile
                 return True
 
         return False
+
+'''
+Complexity
+Time: O(n)
+Space: O(1) — fixed 26-element arrays
+'''
