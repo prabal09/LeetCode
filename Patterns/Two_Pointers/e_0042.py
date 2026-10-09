@@ -16,3 +16,8 @@ class Solution:
             pot = min(maxL[k],maxR[k])-height[k]
             rw += max(0,pot)
         return rw
+
+'''
+Time Complexity: (O(n))
+Space Complexity: (O(n))
+'''

@@ -35,3 +35,8 @@ class Solution:
                     right -= 1
 
         return res
+
+'''
+Time Complexity: (O(n**2)
+Space Complexity: (O(n))
+'''

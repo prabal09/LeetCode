@@ -1,0 +1,20 @@
+class Solution:
+    def twoSum(self, numbers: list[int], target: int) -> list[int]:
+        ''' the array is sorted'''
+        n = len(numbers)
+        left, right = 0, n-1
+        while left < right:
+            summ = numbers[left] + numbers[right]
+            if summ == target:
+                return [left+1, right+1]
+            elif summ < target:
+                left +=1
+            else:
+                right -=1
+
+        return []
+
+'''
+Time Complexity: (O(n))
+Space Complexity: (O(1))
+'''
