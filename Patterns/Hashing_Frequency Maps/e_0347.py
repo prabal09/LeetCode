@@ -6,7 +6,7 @@ class Solution:
 
         buckets = [[] for _ in range(len(nums)+1)]
         for num, freq in count.items():
-            buckets[freq] = num
+            buckets[freq].append(num)
 
         result = []
 
@@ -17,7 +17,7 @@ class Solution:
                     return result
 
 '''
-Time Complexity: (O(n)
+Time Complexity: O(n)
 Space Complexity: O(n)
 '''
 
@@ -38,3 +38,8 @@ class Solution:
 
         # 3. Extract numbers from heap
         return [num for freq, num in heap]
+
+'''
+Time Complexity: O(nlogk)
+Space Complexity: O(n+k)
+'''
